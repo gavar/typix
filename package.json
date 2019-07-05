@@ -1,0 +1,14 @@
+{
+  "name": "@typix/root",
+  "version": "0.0.0-dev",
+  "main": "index.js",
+  "repository": "git+https://github.com/gavar/typix.git",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/issues"
+  },
+  "homepage": "https://github.com/gavar/typix#readme",
+  "private": true
+}
