@@ -12,7 +12,8 @@
   "homepage": "https://github.com/gavar/typix#readme",
   "private": true,
   "scripts": {
-    "semantic-release": "dotenv -- semantic-release"
+    "semantic-release": "dotenv -- semantic-release",
+    "git:release": "git checkout master && git merge --ff develop && git checkout develop"
   },
   "release": {
     "tagFormat": "v/${version}"
