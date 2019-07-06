@@ -10,5 +10,16 @@
     "url": "https://github.com/gavar/typix/issues"
   },
   "homepage": "https://github.com/gavar/typix#readme",
-  "private": true
+  "private": true,
+  "scripts": {
+    "semantic-release": "dotenv -- semantic-release"
+  },
+  "release": {
+    "tagFormat": "v/${version}"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0",
+    "dotenv-cli": "^2.0.0",
+    "semantic-release": "^15.13.18"
+  }
 }
