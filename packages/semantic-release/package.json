@@ -2,6 +2,17 @@
   "name": "@typix/semantic-release",
   "version": "16.0.0",
   "description": "Semantic Release types & tools",
+  "keywords": [
+    "TypeScript",
+    "automation",
+    "changelog",
+    "publish",
+    "release",
+    "semantic",
+    "semantic-release",
+    "semver",
+    "version"
+  ],
   "homepage": "https://github.com/gavar/typix/tree/master/packages/sematic-release#readme",
   "bugs": {
     "url": "https://github.com/gavar/typix/labels/%40typix%2Fsemantic-release"

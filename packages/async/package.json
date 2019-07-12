@@ -9,11 +9,14 @@
     "async",
     "utility"
   ],
-  "homepage": "https://github.com/gavar/typix/tree/master/packages/core#readme",
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/async#readme",
   "bugs": {
-    "url": "https://github.com/gavar/typix/issues"
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Fasync"
   },
-  "repository": "git+https://github.com/gavar/typix.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
   "license": "MIT",
   "author": "Max Stankevich <max.stankevich.me@gmail.com>",
   "main": "src/index",
