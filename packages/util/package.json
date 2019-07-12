@@ -1,0 +1,25 @@
+{
+  "name": "@typix/util",
+  "version": "1.0.0-dev",
+  "description": "Fundamental utilities for the application design.",
+  "keywords": [
+    "TypeScript",
+    "collections",
+    "iterator",
+    "utility"
+  ],
+  "homepage": "https://github.com/gavar/typix/packages/util#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Futil"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "src/index",
+  "dependencies": {
+    "@typix/lang": "1.0.0-dev"
+  }
+}
