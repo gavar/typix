@@ -1,26 +1,33 @@
 {
-  "name": "@typix/root",
-  "version": "0.0.0-dev",
-  "main": "index.js",
-  "repository": "git+https://github.com/gavar/typix.git",
-  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
-  "license": "MIT",
-  "description": "",
+  "name": "typix",
+  "version": "1.0.0-dev",
+  "private": true,
+  "homepage": "https://github.com/gavar/typix#readme",
   "bugs": {
     "url": "https://github.com/gavar/typix/issues"
   },
-  "homepage": "https://github.com/gavar/typix#readme",
-  "private": true,
-  "scripts": {
-    "semantic-release": "dotenv -- semantic-release",
-    "git:release": "git checkout master && git merge --ff develop && git checkout develop"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
   },
-  "release": {
-    "tagFormat": "v/${version}"
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "",
+  "types": "",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/@types/*"
+    ]
+  },
+  "scripts": {
+    "git:release": "git checkout master && git merge --ff develop && git checkout develop",
+    "semantic-release": "semantic-release --dry-run"
   },
   "devDependencies": {
     "dotenv": "^8.0.0",
-    "dotenv-cli": "^2.0.0",
-    "semantic-release": "^15.13.18"
+    "ts-node": "^8.3.0",
+    "tsutils": "^3.14.0",
+    "typescript": "^3.6.0-dev"
   }
 }
