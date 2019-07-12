@@ -1,0 +1,31 @@
+{
+  "name": "@typix/semantic-release",
+  "version": "16.0.0",
+  "description": "Semantic Release types & tools",
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/sematic-release#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Fsemantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "src/index",
+  "types": "src/index",
+  "dependencies": {
+    "@typix/async": "1.0.0-dev"
+  },
+  "devDependencies": {
+    "@types/cosmiconfig": "^5.0.1",
+    "@types/execa": "^0.9.0",
+    "@types/signale": "^1.2.1"
+  },
+  "peerDependencies": {
+    "cosmiconfig": "^5.0.1",
+    "execa": "^0.9.0",
+    "semantic-release": "^16.0.0-beta",
+    "signale": "^1.2.1"
+  }
+}
