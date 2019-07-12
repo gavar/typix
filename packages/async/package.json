@@ -1,0 +1,30 @@
+{
+  "name": "@typix/async",
+  "version": "1.0.0-dev",
+  "private": false,
+  "description": "utility providing functions to work with asynchronous programs",
+  "keywords": [
+    "Promise",
+    "TypeScript",
+    "async",
+    "utility"
+  ],
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/issues"
+  },
+  "repository": "git+https://github.com/gavar/typix.git",
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "src/index",
+  "types": "src/index",
+  "scripts": {},
+  "dependencies": {
+    "@typix/util": "1.0.0-dev",
+    "lodash": "^4.17.13"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14",
+    "tstt": "^1.0.3"
+  }
+}
