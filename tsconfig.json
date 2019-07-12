@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "outDir": "out/ts",
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "es5",
+    "typeRoots": [
+      "packages/@types",
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "**/#*", // all files where names starts with #
+    "**/out", // all 'out' directories
+    "**/tmp", // all 'tmp' directories
+    "**/dist", // all 'dist' directories
+    "**/*.spec.error.*", // dtslint specs with $ExpectError
+    "**/node_modules/*" // node_modules
+  ]
+}
