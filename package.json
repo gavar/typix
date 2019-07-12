@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.0.0",
+    "dotenv-expand": "^5.1.0",
     "semantic-release": "^16.0.0-beta",
     "ts-node": "^8.3.0",
     "tsutils": "^3.14.0",
