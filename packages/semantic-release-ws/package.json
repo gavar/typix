@@ -1,0 +1,39 @@
+{
+  "name": "@typix/semantic-release-ws",
+  "version": "1.0.0-dev",
+  "description": "Semantic Release plugin for publishing Yarn workspaces",
+  "keywords": [
+    "TypeScript",
+    "automation",
+    "changelog",
+    "monorepo",
+    "publish",
+    "release",
+    "semantic",
+    "semantic-release",
+    "semver",
+    "version",
+    "workspace",
+    "yarn"
+  ],
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/sematic-release-ws#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Fsemantic-release-ws"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "src/plugin/index",
+  "types": "src/types",
+  "dependencies": {
+    "@typix/async": "1.0.0-dev",
+    "@typix/semantic-release": "16.0.0",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.3"
+  }
+}
