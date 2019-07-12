@@ -1,24 +1,23 @@
 {
   "name": "@typix/lang",
-  "description": "Fundamental classes for the application design.",
   "version": "1.0.0-dev",
-  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gavar/typix/labels/%40typix%2Flang"
-  },
-  "homepage": "https://github.com/gavar/typix#readme",
+  "description": "Fundamental classes for the application design.",
   "keywords": [
     "TypeScript",
     "exception",
     "fundamental"
   ],
-  "license": "MIT",
-  "main": "src/index",
-  "private": false,
+  "homepage": "https://github.com/gavar/typix#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Flang"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gavar/typix.git"
   },
-  "scripts": {},
-  "types": "src/index"
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "main": "src/index",
+  "types": "src/index",
+  "scripts": {}
 }
