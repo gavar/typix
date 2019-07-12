@@ -16,7 +16,7 @@
     "workspace",
     "yarn"
   ],
-  "homepage": "https://github.com/gavar/typix/tree/master/packages/sematic-release-ws#readme",
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/semantic-release-ws#readme",
   "bugs": {
     "url": "https://github.com/gavar/typix/labels/%40typix%2Fsemantic-release-ws"
   },

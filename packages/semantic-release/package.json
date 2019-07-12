@@ -13,7 +13,7 @@
     "semver",
     "version"
   ],
-  "homepage": "https://github.com/gavar/typix/tree/master/packages/sematic-release#readme",
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/semantic-release#readme",
   "bugs": {
     "url": "https://github.com/gavar/typix/labels/%40typix%2Fsemantic-release"
   },
