@@ -19,6 +19,7 @@
   "license": "MIT",
   "author": "Max Stankevich <max.stankevich.me@gmail.com>",
   "main": "src/index",
+  "types": "src/index",
   "dependencies": {
     "@typix/lang": "1.0.0-dev"
   }
