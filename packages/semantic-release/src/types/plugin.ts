@@ -8,7 +8,7 @@ import {
   VerifyConditionsContext,
   VerifyReleaseContext,
 } from "./contex";
-import { ReleaseType } from "./release";
+import { Release, ReleaseType } from "./release";
 
 /**
  * Plugin step type.
@@ -48,7 +48,7 @@ export type ResultType = {
   verifyRelease: void;
   generateNotes: string;
   prepare: void;
-  publish: void;
+  publish: false | Partial<Release>;
   success: void;
   fail: void;
 };
@@ -60,7 +60,7 @@ export interface Plugin<T = any> {
   verifyRelease(config: T, context: VerifyReleaseContext): Promise<void>;
   generateNotes(config: T, context: GenerateNotesContext): Promise<string>;
   prepare(config: T, context: PrepareContext): Promise<void>;
-  publish(config: T, context: PublishContext): Promise<void>;
+  publish(config: T, context: PublishContext): Promise<false | Partial<Release>>;
   success(config: T, context: SuccessContext): Promise<void>;
   fail(config: T, context: Context): Promise<void>;
 }
@@ -78,7 +78,7 @@ export interface Plugins {
   verifyRelease(context: VerifyReleaseContext): Promise<void>;
   generateNotes(context: GenerateNotesContext): Promise<string>;
   prepare(context: PrepareContext): Promise<void>;
-  publish(context: PublishContext): Promise<void>;
+  publish(context: PublishContext): Promise<false | Partial<Release>>;
   success(context: SuccessContext): Promise<void>;
   fail(context: Context): Promise<void>;
 }
