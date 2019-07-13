@@ -1,10 +1,10 @@
-import { VerifyReleaseContext } from "@typix/semantic-release";
+import { VerifyConditionsContext } from "@typix/semantic-release";
 import { projects } from "../process";
 import { WsConfiguration } from "../types";
 import { callWorkspaces } from "../util";
 import { configureWorkspaces, verifyYarn } from "./verify-conditions/";
 
-export async function verifyConditions(config: WsConfiguration, context: VerifyReleaseContext) {
+export async function verifyConditions(config: WsConfiguration, context: VerifyConditionsContext) {
   await verifyYarn();
   const workspaces = await configureWorkspaces(config, context);
 
@@ -15,6 +15,5 @@ export async function verifyConditions(config: WsConfiguration, context: VerifyR
   projects[cwd] = {cwd, workspaces};
   logger.info("workspaces:", workspaces.map(x => x.name));
 
-  const results = await callWorkspaces("verifyConditions", context, workspaces);
-  return results;
+  return await callWorkspaces("verifyConditions", context, workspaces);
 }

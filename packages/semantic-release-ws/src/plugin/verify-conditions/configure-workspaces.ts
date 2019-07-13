@@ -1,11 +1,16 @@
 import { filter } from "@typix/async";
-import { check, hasSemanticReleaseConfig, VerifyReleaseContext } from "@typix/semantic-release";
+import {
+  check,
+  hasSemanticReleaseConfig,
+  VerifyConditionsContext,
+  VerifyReleaseContext,
+} from "@typix/semantic-release";
 import { Workspace, WsConfiguration } from "../../types";
 import { createWorkspace, createWorkspaceContext, yarn } from "../../util";
 
 const getConfig = require("semantic-release/lib/get-config");
 
-export async function configureWorkspaces(config: WsConfiguration, source: VerifyReleaseContext): Promise<Workspace[]> {
+export async function configureWorkspaces(config: WsConfiguration, source: VerifyConditionsContext): Promise<Workspace[]> {
   const {logger, cwd} = source;
   logger.start("resolving workspaces");
   const info = await yarn.workspace.info(cwd);
@@ -33,7 +38,7 @@ function toWorkspace(this: VerifyReleaseContext, [key, value]: [string, yarn.Wor
   return createWorkspace(this, key, value.location);
 }
 
-async function checkWorkspace(workspace: Workspace, {logger}: VerifyReleaseContext): Promise<boolean> {
+async function checkWorkspace(workspace: Workspace, {logger}: VerifyConditionsContext): Promise<boolean> {
   // TODO: check packages is private?
   const violation = await check(workspace,
     checkSemanticReleaseConfig,
