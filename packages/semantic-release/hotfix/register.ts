@@ -1,11 +1,6 @@
 import { Signale } from "signale";
 
-/** Apply hotfix to avoid libraries throwing errors. */
-export function hotfix() {
-  signale.hotfix();
-}
-
-namespace signale {
+export namespace signale {
   /**
    * Fix errors caused by invalid usage of {@link Signale}.
    * @see scope
@@ -24,3 +19,4 @@ namespace signale {
   }
 }
 
+signale.hotfix();

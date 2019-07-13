@@ -1,5 +1,4 @@
-// apply hotfix
-require("@typix/semantic-release").hotfix();
+require("@typix/semantic-release/hotfix/register");
 
 export * from "../types";
 export { verifyConditions } from "./verify-conditions";
