@@ -1,7 +1,7 @@
 import { Options, Plugins, ResultType } from "@typix/semantic-release";
 
 export interface WsConfiguration {
-
+  options?: Partial<Options>;
 }
 
 export interface Workspace {
