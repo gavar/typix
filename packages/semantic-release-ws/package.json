@@ -1,6 +1,6 @@
 {
   "name": "@typix/semantic-release-ws",
-  "version": "1.0.0-dev",
+  "version": "16.0.0-beta.0",
   "description": "Semantic Release plugin for publishing Yarn workspaces",
   "keywords": [
     "TypeScript",
