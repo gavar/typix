@@ -23,8 +23,8 @@ export async function configureWorkspaces(config: WsConfiguration, source: Verif
     const options = {...yargs.argv};
 
     // apply common options for all workspaces
-    if (config.options)
-      Object.assign(options, config.options);
+    if (config.workspaces && config.workspaces.options)
+      Object.assign(options, config.workspaces.options);
 
     // initialize workspace plugins
     for (const workspace of workspaces) {

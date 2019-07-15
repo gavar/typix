@@ -8,7 +8,9 @@ import {
 } from "@typix/semantic-release";
 
 export interface WsConfiguration {
-  options?: Partial<Options>;
+  workspaces?: {
+    options?: Partial<Options>;
+  }
 }
 
 export interface Workspace {
