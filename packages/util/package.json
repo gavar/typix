@@ -1,6 +1,6 @@
 {
   "name": "@typix/util",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta",
   "description": "Fundamental utilities for the application design.",
   "keywords": [
     "TypeScript",
@@ -21,6 +21,6 @@
   "main": "src/index",
   "types": "src/index",
   "dependencies": {
-    "@typix/lang": "1.0.0-dev"
+    "@typix/lang": "1.0.0-beta"
   }
 }

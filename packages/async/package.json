@@ -1,6 +1,6 @@
 {
   "name": "@typix/async",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta",
   "private": false,
   "description": "utility providing functions to work with asynchronous programs",
   "keywords": [
@@ -23,7 +23,7 @@
   "types": "src/index",
   "scripts": {},
   "dependencies": {
-    "@typix/util": "1.0.0-dev",
+    "@typix/util": "1.0.0-beta",
     "lodash": "^4.17.13"
   },
   "devDependencies": {

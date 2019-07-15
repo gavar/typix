@@ -1,6 +1,6 @@
 {
   "name": "@typix/semantic-release",
-  "version": "16.0.0-beta.0",
+  "version": "16.0.0-beta",
   "description": "Semantic Release types & tools",
   "keywords": [
     "TypeScript",
@@ -26,7 +26,7 @@
   "main": "src/index",
   "types": "src/index",
   "dependencies": {
-    "@typix/async": "1.0.0-dev"
+    "@typix/async": "1.0.0-beta"
   },
   "devDependencies": {
     "@types/cosmiconfig": "^5.0.1",
