@@ -1,22 +1,10 @@
-import {
-  Context,
-  ContextType,
-  Plugin,
-  PluginFunction,
-  Plugins,
-  PluginsFunction,
-  ResultType,
-  Step,
-} from "../../src/types";
+import { Context, ContextType, Plugin, Plugins, PluginsFunction, Step } from "../../src/types";
 
 type Is<A extends B, B> = never;
 type Eq<A extends B, B extends C, C = A> = never;
 
-type $ReturnTypes = Eq<keyof ResultType, Step>;
+// type $ReturnTypes = Eq<keyof ResultType, Step>;
 type $ContextTypes = Eq<keyof ContextType, Step> & Is<ContextType, Record<Step, Context>>;
-
-// check `Plugin` functions
-type $Plugin = Eq<Plugin, { [S in Step]: PluginFunction<S>; }>;
 
 // check `Plugin` context types
 type PluginContextTypes = { [S in Step]: PluginFunctionContextType<S> }

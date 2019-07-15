@@ -1,4 +1,11 @@
-import { Options, Plugins, ResultType } from "@typix/semantic-release";
+import {
+  AnalyzeCommitsContext,
+  Options,
+  Plugins,
+  Release,
+  ReleaseNotes,
+  VerifyReleaseContext,
+} from "@typix/semantic-release";
 
 export interface WsConfiguration {
   options?: Partial<Options>;
@@ -17,7 +24,11 @@ export interface Workspace {
   /** Workspace plugins. */
   plugins: Plugins;
 
-  results: ResultType;
+  /** @see AnalyzeCommitsContext#lastRelease */
+  lastRelease: Release;
+
+  /** @see VerifyReleaseContext#nextRelease */
+  nextRelease: ReleaseNotes;
 }
 
 /** Project information. */
