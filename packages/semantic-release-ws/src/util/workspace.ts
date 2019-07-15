@@ -1,11 +1,13 @@
 import { Async } from "@typix/async";
 import {
+  AnalyzeCommitsContext,
   Context,
   ContextType,
   Options,
   PluginReturnType,
   PluginsFunction,
   PluginsReturnType,
+  PrepareContext,
   Step,
 } from "@typix/semantic-release";
 import path from "path";
@@ -88,19 +90,12 @@ export function createWorkspace(root: Context, name: string, relative: string): 
   return {cwd, name} as Workspace;
 }
 
-export function createWorkspaceContext<T extends Context>(workspace: Workspace, owner: T, options: Options = workspace.options): T {
-  const {cwd, name, nextRelease, lastRelease} = workspace;
-  let {env, logger} = owner;
-  env = {...env};
-  logger = logger.scope(name);
-
-  return {
-    ...owner,
-    cwd,
-    env,
-    logger,
-    options,
-    lastRelease,
-    nextRelease,
-  };
+export function createWorkspaceContext<T extends Context>(w: Workspace, owner: T, options: Options = w.options): T {
+  const context = {...owner, options} as T & AnalyzeCommitsContext & PrepareContext;
+  context.cwd = w.cwd;
+  context.env = {...owner.env};
+  context.logger = owner.logger.scope(w.name);
+  if (w.lastRelease) context.lastRelease = w.lastRelease;
+  if (w.nextRelease) context.nextRelease = w.nextRelease;
+  return context;
 }

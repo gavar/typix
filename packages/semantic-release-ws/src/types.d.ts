@@ -26,10 +26,16 @@ export interface Workspace {
   /** Workspace plugins. */
   plugins: Plugins;
 
-  /** @see AnalyzeCommitsContext#lastRelease */
+  /**
+   * Last release of this workspace.
+   * @see AnalyzeCommitsContext#lastRelease
+   */
   lastRelease: Release;
 
-  /** @see VerifyReleaseContext#nextRelease */
+  /**
+   * Next release of this workspace.
+   * @see VerifyReleaseContext#nextRelease
+   */
   nextRelease: ReleaseNotes;
 }
 
@@ -37,6 +43,7 @@ export interface Workspace {
 export interface Project {
   /** Project root path. */
   cwd: string;
+
   /** List of project workspaces. */
   workspaces: Workspace[];
 }

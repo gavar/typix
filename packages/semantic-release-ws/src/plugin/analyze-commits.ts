@@ -1,13 +1,14 @@
 import { each } from "@typix/async";
-import { AnalyzeCommitsContext, commit, ReleaseNotes, ReleaseType } from "@typix/semantic-release";
+import { AnalyzeCommitsContext, ReleaseNotes, ReleaseType, updateCommitFiles } from "@typix/semantic-release";
 import { Workspace, WsConfiguration } from "../types";
 import { callWorkspacesOf, createWorkspaceContext, WorkspacesHooks } from "../util";
+import { selectMajorReleaseType, showReleaseTypesSummary } from "./analyze-commits/";
 
 const getLastRelease = require("semantic-release/lib/get-last-release");
 
 export async function analyzeCommits(config: WsConfiguration, context: AnalyzeCommitsContext): Promise<ReleaseType> {
   context.logger.start("resolving commit files");
-  await each(context.commits, commit.updateFiles);
+  await each(context.commits, updateCommitFiles);
   return await callWorkspacesOf("analyzeCommits", context, hooks);
 }
 
@@ -24,25 +25,14 @@ const hooks: WorkspacesHooks<"analyzeCommits"> = {
     } as ReleaseNotes;
   },
 
+  /** @inheritDoc */
   processWorkspacesOutputs(releaseTypes: ReleaseType[]): ReleaseType {
-    let max: number = 0;
-    let output: ReleaseType;
-    for (const releaseType of releaseTypes)
-      if (releaseWeights[releaseType] > max)
-        max = releaseWeights[output = releaseType];
-    return output;
+    return selectMajorReleaseType(releaseTypes);
   },
 
+  /** @inheritDoc */
   postProcessWorkspaces(workspaces: Workspace[], releaseTypes: ReleaseType[], releaseType: ReleaseType) {
-    const rows = workspaces.map(w => [w.name, w.nextRelease.type]);
-    rows.push(["~", releaseType]);
-    const table = rows.map(t => ({name: t[0], "release-type": t[1]}));
-    console.table(table);
+    showReleaseTypesSummary(workspaces, releaseType);
   },
 };
 
-const releaseWeights: Record<ReleaseType, number> = {
-  patch: 1,
-  minor: 2,
-  major: 3,
-};
