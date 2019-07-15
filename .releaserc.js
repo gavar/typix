@@ -1,7 +1,7 @@
 require("./boot");
 module.exports = {
-  "tagFormat": "v/${version}",
-  "plugins": [
+  tagFormat: "v/latest/${version}",
+  plugins: [
     "@typix/semantic-release-ws",
   ],
 };
