@@ -1,5 +1,5 @@
 import execa from "execa";
-import { EOL } from "os";
+import slash from "slash";
 
 export namespace git {
   /**
@@ -7,7 +7,12 @@ export namespace git {
    * @param hash - commit hash value.
    */
   export async function filesByCommit(hash: string): Promise<string[]> {
-    const r = await execa("git", ["diff-tree", "--no-commit-id", "--name-only", "-r", hash]);
-    return r.stdout.split(EOL);
+    const raw = await execa("git", ["diff-tree", "--no-commit-id", "--name-only", "-r", hash]);
+    const rows = raw.stdout.split("\n");
+    return rows.map(normalize);
   }
+}
+
+function normalize(file: string) {
+  return slash(file.trim());
 }

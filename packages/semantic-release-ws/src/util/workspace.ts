@@ -95,6 +95,7 @@ export function createWorkspaceContext<T extends Context>(w: Workspace, owner: T
   context.cwd = w.cwd;
   context.env = {...owner.env};
   context.logger = owner.logger.scope(w.name);
+  if (w.commits) context.commits = w.commits;
   if (w.lastRelease) context.lastRelease = w.lastRelease;
   if (w.nextRelease) context.nextRelease = w.nextRelease;
   return context;

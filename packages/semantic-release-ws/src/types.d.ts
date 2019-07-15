@@ -1,5 +1,6 @@
 import {
   AnalyzeCommitsContext,
+  Commit,
   Options,
   Plugins,
   Release,
@@ -25,6 +26,12 @@ export interface Workspace {
 
   /** Workspace plugins. */
   plugins: Plugins;
+
+  /**
+   * Commits related to modification of files withing workspace.
+   * @see AnalyzeCommitsContext#commits
+   */
+  commits: Commit[];
 
   /**
    * Last release of this workspace.

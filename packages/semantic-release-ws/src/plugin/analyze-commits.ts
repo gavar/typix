@@ -2,7 +2,7 @@ import { each } from "@typix/async";
 import { AnalyzeCommitsContext, ReleaseNotes, ReleaseType, updateCommitFiles } from "@typix/semantic-release";
 import { Workspace, WsConfiguration } from "../types";
 import { callWorkspacesOf, createWorkspaceContext, WorkspacesHooks } from "../util";
-import { selectMajorReleaseType, showReleaseTypesSummary } from "./analyze-commits/";
+import { ownCommitsOf, selectMajorReleaseType, showReleaseTypesSummary } from "./analyze-commits/";
 
 const getLastRelease = require("semantic-release/lib/get-last-release");
 
@@ -16,6 +16,7 @@ const hooks: WorkspacesHooks<"analyzeCommits"> = {
 
   preProcessWorkspace(workspace: Workspace, owner: AnalyzeCommitsContext) {
     const context = createWorkspaceContext(workspace, owner);
+    workspace.commits = ownCommitsOf(context);
     workspace.lastRelease = getLastRelease(context);
   },
 
