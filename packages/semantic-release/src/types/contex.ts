@@ -1,7 +1,8 @@
 import { Signale } from "signale";
-import { Plugin } from "./plugin";
+import { Branch } from "./branch";
 import { Options } from "./cli";
 import { Commit } from "./commit";
+import { Plugin } from "./plugin";
 import { Release, ReleaseNotes } from "./release";
 import ProcessEnv = NodeJS.ProcessEnv;
 import ReadStream = NodeJS.ReadStream;
@@ -16,7 +17,7 @@ export interface Context {
   logger: Signale;
   options: Options;
   branches: unknown[];
-  branch: unknown;
+  branch: Branch;
 }
 
 /** Context provided for {@link Plugin#verifyConditions} step. */

@@ -1,16 +1,16 @@
-export interface Branch {
+export interface BranchOption {
   name: string;
   prerelease: boolean;
 }
 
-export type BranchType
+export type BranchOptionType
   = string
-  | Branch
+  | BranchOption
   ;
 
 export interface Options {
   extends: string | string[];
-  branches: BranchType | Array<BranchType>;
+  branches: BranchOptionType | Array<BranchOptionType>;
   repositoryUrl: string;
   tagFormat: string;
   plugins: Array<string | [string, object]>;
