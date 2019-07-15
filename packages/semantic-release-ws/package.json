@@ -31,10 +31,12 @@
   "dependencies": {
     "@typix/async": "1.0.0-dev",
     "@typix/semantic-release": "16.0.0",
+    "semver": "^5.4.1",
     "shelljs": "^0.8.3",
     "slash": "^3.0.0"
   },
   "devDependencies": {
+    "@types/semver": "^5.4.1",
     "@types/shelljs": "^0.8.3",
     "@types/slash": "^2.0.0"
   }
