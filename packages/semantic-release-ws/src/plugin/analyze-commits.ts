@@ -2,9 +2,7 @@ import { each } from "@typix/async";
 import { AnalyzeCommitsContext, ReleaseNotes, ReleaseType, updateCommitFiles } from "@typix/semantic-release";
 import { Workspace, WsConfiguration } from "../types";
 import { callWorkspacesOf, createWorkspaceContext, WorkspacesHooks } from "../util";
-import { ownCommitsOf, selectMajorReleaseType, showReleaseTypesSummary } from "./analyze-commits/";
-
-const getLastRelease = require("semantic-release/lib/get-last-release");
+import { getLastRelease, ownCommitsOf, selectMajorReleaseType } from "./analyze-commits/";
 
 export async function analyzeCommits(config: WsConfiguration, context: AnalyzeCommitsContext): Promise<ReleaseType> {
   context.logger.start("resolving commit files");
@@ -33,7 +31,7 @@ const hooks: WorkspacesHooks<"analyzeCommits"> = {
 
   /** @inheritDoc */
   postProcessWorkspaces(workspaces: Workspace[], releaseTypes: ReleaseType[], releaseType: ReleaseType) {
-    showReleaseTypesSummary(workspaces, releaseType);
+    // showReleaseTypesSummary(workspaces, releaseType);
   },
 };
 
