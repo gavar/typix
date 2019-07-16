@@ -1,0 +1,13 @@
+{
+  "endOfLine": "lf",
+  "printWidth": 100,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ".*rc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

@@ -22,11 +22,13 @@
   },
   "scripts": {
     "git:release": "git checkout master && git merge --ff develop && git checkout develop",
+    "prettier": "prettier **/*.{js,ts,json,yml,md}",
     "semantic-release": "semantic-release --dry-run"
   },
   "devDependencies": {
     "dotenv": "^8.0.0",
     "dotenv-expand": "^5.1.0",
+    "prettier": "^1.18.2",
     "semantic-release": "^16.0.0-beta",
     "ts-node": "^8.3.0",
     "tsutils": "^3.14.0",
