@@ -1,7 +1,6 @@
 {
   "name": "@typix/async",
   "version": "1.0.0-beta",
-  "private": false,
   "description": "utility providing functions to work with asynchronous programs",
   "keywords": [
     "Promise",
