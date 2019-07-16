@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@typix/eslint-config",
+    "@typix/eslint-config/typescript"
+  ]
+}

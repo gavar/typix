@@ -22,6 +22,7 @@
   },
   "scripts": {
     "git:release": "git checkout master && git merge --ff develop && git checkout develop",
+    "lint": "eslint **/*.{js,ts}",
     "prettier": "prettier **/*.{js,ts,json,yml,md}",
     "semantic-release": "semantic-release --dry-run"
   },

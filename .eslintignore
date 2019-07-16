@@ -1,0 +1,5 @@
+### Project ###
+# all files name starting with '#'
+\#*
+# output directories
+/out
