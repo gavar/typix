@@ -1,0 +1,39 @@
+{
+  "name": "@typix/commitlint-config",
+  "version": "1.0.0-beta",
+  "description": "commitlint configuration",
+  "keywords": [
+    "changelog",
+    "check",
+    "commitlint",
+    "conventional",
+    "conventional-changelog",
+    "lint",
+    "log"
+  ],
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/commitlint-config#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Feslint-config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Max Stankevich",
+    "email": "max.stankevich.me@gmail.com"
+  },
+  "files": [
+    "index.js"
+  ],
+  "release": {
+    "extends": "../../configs/release/commitlint"
+  },
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0"
+  }
+}
