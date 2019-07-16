@@ -1,0 +1,45 @@
+{
+  "name": "@typix/eslint-config",
+  "version": "1.0.0-beta",
+  "description": "ESLint configurations",
+  "keywords": [
+    "config",
+    "eslint",
+    "eslintconfig",
+    "javascript",
+    "prettier",
+    "styleguide"
+  ],
+  "homepage": "https://github.com/gavar/typix/tree/master/packages/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/typix/labels/%40typix%2Feslint-config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/typix.git"
+  },
+  "license": "MIT",
+  "author": "Max Stankevich <max.stankevich.me@gmail.com>",
+  "files": [
+    "index.js",
+    "typescript.js"
+  ],
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "canary",
+    "@typescript-eslint/parser": "canary",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "canary",
+    "@typescript-eslint/parser": "canary",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0"
+  }
+}
