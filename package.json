@@ -28,13 +28,23 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "commitlint": {
     "extends": [
       "@typix/commitlint-config"
     ]
+  },
+  "lint-staged": {
+    "**/package.json": [
+      "sort-package-json",
+      "git add"
+    ],
+    "*.*rc": "prettier --check",
+    "*.{js,ts}": "eslint",
+    "*.{json,yml,md}": "prettier --check"
   },
   "devDependencies": {
     "dotenv": "^8.0.0",
