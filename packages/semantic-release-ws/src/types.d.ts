@@ -8,7 +8,8 @@ import {
   VerifyReleaseContext,
 } from "@typix/semantic-release";
 
-export interface WsConfiguration {
+export interface WsConfiguration extends Options {
+  confirm?: boolean;
   workspaces?: {
     options?: Partial<Options>;
   }
