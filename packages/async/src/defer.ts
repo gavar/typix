@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+
 /** Represents {@link Promise} resolve callback. */
 export interface PromiseResolve<T = any> {
   /**
@@ -35,15 +37,15 @@ export interface Defer<T = any> extends Promise<T> {
 
 /** Creates a new {@link Promise} with exposed state. */
 export function defer<T>(): Defer<T> {
-  const defer = Object.assign(new Promise(executor), that);
+  const promise = Object.assign(new Promise(executor), that);
   Object.assign(that, none);
-  return defer;
+  return promise;
 }
 
 const that: Defer = {} as any;
-const none: Defer = {resolve: null, reject: null} as any;
+const none: Defer = { resolve: null, reject: null } as any;
 
-function executor<T>(resolve: PromiseResolve<T>, reject: PromiseReject) {
+function executor<T>(resolve: PromiseResolve<T>, reject: PromiseReject): void {
   that.resolve = resolve;
   that.reject = reject;
 }

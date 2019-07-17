@@ -2,8 +2,8 @@ import { Signale } from "signale";
 import { Branch } from "./branch";
 import { Options } from "./cli";
 import { Commit } from "./commit";
-import { Plugin } from "./plugin";
 import { Release, ReleaseNotes } from "./release";
+
 import ProcessEnv = NodeJS.ProcessEnv;
 import ReadStream = NodeJS.ReadStream;
 import WriteStream = NodeJS.WriteStream;

@@ -1,6 +1,5 @@
 /** Base class for all exceptions. */
 export class Exception implements Error {
-
   /** Name for the type of error. */
   name: string;
 
@@ -36,4 +35,4 @@ export class Exception implements Error {
   prototype.name = Exception.name;
   prototype.message = "unhandled exception";
   Object.setPrototypeOf(prototype, Error.prototype);
-})(Exception.prototype);
+}(Exception.prototype));

@@ -1,4 +1,4 @@
-import { elseNone, Iterable, iterator, pullNone } from "./core";
+import { Iterable, elseNone, iterator, pullNone } from "./core";
 import { then } from "./then";
 import { Async, AsyncPredicate } from "./types";
 
@@ -18,7 +18,5 @@ export function filter<T>(iterable: Iterable<Async<T>>, predicate: AsyncPredicat
     const async = then(match, elseNone, value);
     values.push(async);
   }
-
-  return Promise.all(values)
-    .then(pullNone);
+  return Promise.all(values).then(pullNone);
 }

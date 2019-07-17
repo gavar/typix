@@ -3,16 +3,14 @@ import { Async, find, then } from "@typix/async";
 /**
  * Rule asynchronously checking validity of the value state.
  */
-export interface AsyncRule<T> {
-  (value: T): Async<true | string>
-}
+export type AsyncRule<T> = (value: T) => Async<true | string>;
 
 /**
  * Check if value violates any of the provided rules.
  * Performs asynchronously, but returns first violation reported.
  * @param value - value to check.
  * @param rules - rules to apply.
- * @return rule violation message if any.
+ * @returns rule violation message if any.
  */
 export function check<T>(value: T, ...rules: AsyncRule<T>[]): Async<void | string> {
   const tests = rules.map(test, value);

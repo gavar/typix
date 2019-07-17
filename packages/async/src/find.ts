@@ -1,5 +1,5 @@
 import { Iterable, iterator } from "./core";
-import { defer, Defer } from "./defer";
+import { Defer, defer } from "./defer";
 import { isAsync, then } from "./then";
 import { Async, AsyncPredicate } from "./types";
 
@@ -7,7 +7,6 @@ import { Async, AsyncPredicate } from "./types";
  * Gets the first item that match the predicate.
  * Performs in parallel, so wins who's faster, rather then while closer to the beginning.
  * May complete synchronously when any value matches predicate synchronously.
- *
  * @param iterable - a collection to iterate over.
  * @param predicate - predicate defining criteria to match.
  * @param defaultValue - value to return when none of the items match the predicate.
@@ -64,6 +63,6 @@ class AsyncContext<T> {
   };
 
   wait(): Promise<T> {
-    return this.promise = defer();
+    return (this.promise = defer());
   }
 }

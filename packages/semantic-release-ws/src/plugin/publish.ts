@@ -1,11 +1,12 @@
 import { PublishContext, Release } from "@typix/semantic-release";
 import { WsConfiguration } from "../types";
-import { callWorkspacesOf, WorkspacesHooks } from "../util";
+import { WorkspacesHooks, callWorkspacesOf } from "../util";
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function publish(input: WsConfiguration, context: PublishContext) {
   // TODO: create tags
   // TODO: push to remote
-  return await callWorkspacesOf("publish", context, hooks);
+  return callWorkspacesOf("publish", context, hooks);
 }
 
 const hooks: WorkspacesHooks<"publish"> = {

@@ -7,8 +7,7 @@ import { Async } from "./types";
  */
 export function isAsync<T>(value: T | PromiseLike<T>): value is PromiseLike<T> {
   return value
-    && typeof (value as PromiseLike<T>).then === "function"
-    ;
+    && typeof (value as PromiseLike<T>).then === "function";
 }
 
 /**
@@ -18,8 +17,7 @@ export function isAsync<T>(value: T | PromiseLike<T>): value is PromiseLike<T> {
 export function isPromise<T>(value: T | Promise<T>): value is Promise<T> {
   return value
     && typeof (value as Promise<T>).then === "function"
-    && typeof (value as Promise<T>).catch === "function"
-    ;
+    && typeof (value as Promise<T>).catch === "function";
 }
 
 /**
@@ -28,10 +26,7 @@ export function isPromise<T>(value: T | Promise<T>): value is Promise<T> {
  * @param async - value that may be asynchronous.
  * @param fulfill - callback to execute when when value resolves.
  */
-export function then<T, R>(
-  async: T | PromiseLike<T>,
-  fulfill: (value: T) => Async<R>,
-): Async<R>;
+export function then<T, R>(async: T | PromiseLike<T>, fulfill: (value: T) => Async<R>): Async<R>;
 
 /**
  * Attaches resolution callback to the potentially {@link isAsync asynchronous} value.
@@ -116,7 +111,12 @@ export function then<T, R>(
 ): Async<T | R>;
 
 /** @private */
-export function then<T, S = T>(async: Async<T>, fulfill: Fulfill<T, S>, params?: any, reject?: any) {
+export function then<T, S = T>(
+  async: Async<T>,
+  fulfill: Fulfill<T, S>,
+  params?: any,
+  reject?: any,
+): Async {
   // normalize arguments
   if (typeof params === "function" && arguments.length < 4) {
     reject = params;
@@ -124,8 +124,7 @@ export function then<T, S = T>(async: Async<T>, fulfill: Fulfill<T, S>, params?:
   }
 
   // asyncable is a promise
-  if (isAsync(async))
-    return async.then(resolver(fulfill, params), reject);
+  if (isAsync(async)) return async.then(resolver(fulfill, params), reject);
 
   // asyncable is a value
   if (typeof fulfill === "function")
@@ -144,10 +143,9 @@ function resolver<T, R, P>(fulfill: Fulfill<T, R, P>, params: P): Fulfill<T, R> 
       ? Array.isArray(params)
         ? value => fulfill(value, ...params)
         : value => fulfill(value, params)
-      : fulfill as any;
+      : (fulfill as any);
 }
 
 type Fulfill<T, R, P = void> = P extends any[]
   ? (value: T, ...params: P) => Async<R>
-  : (value: T, param?: P) => Async<R>
-  ;
+  : (value: T, param?: P) => Async<R>;

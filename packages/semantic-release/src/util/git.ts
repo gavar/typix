@@ -13,6 +13,6 @@ export namespace git {
   }
 }
 
-function normalize(file: string) {
+function normalize(file: string): string {
   return slash(file.trim());
 }

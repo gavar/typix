@@ -1,18 +1,10 @@
-import {
-  AnalyzeCommitsContext,
-  Commit,
-  Options,
-  Plugins,
-  Release,
-  ReleaseNotes,
-  VerifyReleaseContext,
-} from "@typix/semantic-release";
+import { Commit, Options, Plugins, Release, ReleaseNotes } from "@typix/semantic-release";
 
 export interface WsConfiguration extends Options {
   confirm?: boolean;
   workspaces?: {
     options?: Partial<Options>;
-  }
+  };
 }
 
 export interface Workspace {

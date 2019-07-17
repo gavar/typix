@@ -1,5 +1,5 @@
-import { AnalyzeCommitsContext, Commit, commitGet } from "@typix/semantic-release";
 import path from "path";
+import { AnalyzeCommitsContext, Commit, commitGet } from "@typix/semantic-release";
 import slash from "slash";
 
 /**
@@ -7,7 +7,7 @@ import slash from "slash";
  * @param context - context defining package root path: {@link AnalyzeCommitsContext#cwd}.
  */
 export function ownCommitsOf(context: AnalyzeCommitsContext): Commit[] {
-  const prefix = slash(path.relative(process.cwd(), context.cwd)) + "/";
+  const prefix = `${slash(path.relative(process.cwd(), context.cwd))}/`;
   return context.commits.filter(isOwnCommit, prefix);
 }
 

@@ -1,5 +1,5 @@
-import cosmiconfig from "cosmiconfig";
 import path from "path";
+import cosmiconfig from "cosmiconfig";
 
 const CONFIG_NAME = "release";
 const CONFIG_FILES = [
@@ -13,7 +13,7 @@ const CONFIG_FILES = [
 ];
 
 export async function hasSemanticReleaseConfig(cwd: string): Promise<boolean> {
-  const res = await cosmiconfig(CONFIG_NAME, {searchPlaces: CONFIG_FILES}).search(cwd);
+  const res = await cosmiconfig(CONFIG_NAME, { searchPlaces: CONFIG_FILES }).search(cwd);
   const dir = res && res.filepath && path.dirname(res.filepath);
   return dir === cwd;
 }

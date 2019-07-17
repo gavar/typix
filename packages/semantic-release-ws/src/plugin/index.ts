@@ -1,5 +1,5 @@
-require("@typix/semantic-release/hotfix/register");
-require("./hotfix/register");
+import "@typix/semantic-release/hotfix/register";
+import "./hotfix/register";
 
 export * from "../types";
 export { verifyConditions } from "./verify-conditions";

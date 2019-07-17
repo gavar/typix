@@ -22,13 +22,12 @@ export type Step =
   | "prepare"
   | "publish"
   | "success"
-  | "fail"
-  ;
+  | "fail";
 
 /**
  * Defines what kind of context provided for the particular release step.
  */
-export type ContextType = {
+export interface ContextType {
   verifyConditions: VerifyConditionsContext;
   analyzeCommits: AnalyzeCommitsContext;
   verifyRelease: VerifyReleaseContext;
@@ -37,7 +36,7 @@ export type ContextType = {
   publish: PublishContext;
   success: SuccessContext;
   fail: Context;
-};
+}
 
 /** Set of release steps available for implementation by plugin. */
 export interface Plugin<T = unknown> {
@@ -52,8 +51,7 @@ export interface Plugin<T = unknown> {
 }
 
 /** Return type of the particular release step of {@link Plugin}. */
-export type PluginReturnType<S extends Step> =
-  Plugin[S] extends (...args: any) => Promise<infer T> ? T : never;
+export type PluginReturnType<S extends Step> = Plugin[S] extends (...args: any) => Promise<infer T> ? T : never;
 
 /** All plugins steps available as a single function invocation receiving context as first argument. */
 export interface Plugins {

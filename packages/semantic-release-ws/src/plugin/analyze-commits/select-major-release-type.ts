@@ -5,7 +5,7 @@ import { ReleaseType } from "@typix/semantic-release";
  * @param releaseTypes - release types to choose from.
  */
 export function selectMajorReleaseType(releaseTypes: ReleaseType[]): ReleaseType {
-  let max: number = 0;
+  let max = 0;
   let major: ReleaseType;
   for (const releaseType of releaseTypes)
     if (releaseTypeWeights[releaseType] > max)

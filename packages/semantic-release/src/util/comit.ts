@@ -19,7 +19,8 @@ const commitCache: Record<string, Partial<CommitProps>> = {};
  * @param key - name of the property to get.
  */
 export function commitGet<K extends keyof CommitProps>(commit: Commit, key: K): CommitProps[K] {
-  return commitCache[commit.hash] && commitCache[commit.hash][key] || void 0;
+  if (commitCache[commit.hash])
+    return commitCache[commit.hash][key];
 }
 
 /**

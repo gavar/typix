@@ -3,17 +3,14 @@ export interface BranchOption {
   prerelease: boolean;
 }
 
-export type BranchOptionType
-  = string
-  | BranchOption
-  ;
+export type BranchOptionType = string | BranchOption;
 
 export interface Options {
   extends: string | string[];
-  branches: BranchOptionType | Array<BranchOptionType>;
+  branches: BranchOptionType | BranchOptionType[];
   repositoryUrl: string;
   tagFormat: string;
-  plugins: Array<string | [string, object]>;
+  plugins: (string | [string, object])[];
   dryRun: boolean;
   ci: boolean;
   debug: boolean;

@@ -4,7 +4,6 @@
  * @see {@link https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Iterator.html java.util.Iterator<T>}
  */
 export interface Iterator<T = any> {
-
   /** Whether the iteration has more elements. */
   readonly hasNext: boolean;
 

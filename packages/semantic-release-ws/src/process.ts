@@ -5,6 +5,6 @@ import { Project, Projects } from "./types";
 export const projects: Projects = {};
 
 /** Get {@link Project} associated with provided context. */
-export function projectByContext({cwd}: Context): Project {
+export function projectByContext({ cwd }: Context): Project {
   return projects[cwd];
 }

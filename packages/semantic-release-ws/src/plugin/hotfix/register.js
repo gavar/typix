@@ -1,11 +1,11 @@
-const {publish} = require("semantic-release/lib/definitions/plugins");
+const { publish } = require("semantic-release/lib/definitions/plugins");
 
 /**
  * Semantic Release throws error when `publish` step returns an array.
  * Since workspace may define multiple publish steps, we to avoid validating arrays.
  */
 function injectPublish() {
-  const {outputValidator} = publish;
+  const { outputValidator } = publish;
   const config = publish.pipelineConfig();
 
   publish.outputValidator = function (output) {
@@ -20,14 +20,14 @@ function injectPublish() {
       : output;
   };
 
-  publish.pipelineConfig = function () {
+  publish.pipelineConfig = function (...args) {
     return {
       ...config,
-      transform(output, step) {
+      transform(output) {
         // leave array as is as they already transformed by inner plugin
         return Array.isArray(output)
           ? output
-          : config.transform.apply(this, arguments);
+          : config.transform.apply(this, args);
       },
     };
   };
