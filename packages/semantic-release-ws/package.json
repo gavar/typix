@@ -41,5 +41,8 @@
     "@types/semver": "^5.4.1",
     "@types/shelljs": "^0.8.3",
     "@types/slash": "^2.0.0"
+  },
+  "release": {
+    "extends": "../../configs/release/semantic-release"
   }
 }

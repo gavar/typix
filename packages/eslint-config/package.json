@@ -34,5 +34,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-unicorn": "^9.1.1",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.5.0"
+  },
+  "release": {
+    "extends": "../../configs/release/eslint"
   }
 }

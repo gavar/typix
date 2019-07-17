@@ -22,5 +22,8 @@
   "types": "src/index",
   "dependencies": {
     "@typix/lang": "1.0.0-beta"
+  },
+  "release": {
+    "extends": "../../configs/release/typix"
   }
 }

@@ -19,5 +19,8 @@
   "author": "Max Stankevich <max.stankevich.me@gmail.com>",
   "main": "src/index",
   "types": "src/index",
-  "scripts": {}
+  "scripts": {},
+  "release": {
+    "extends": "../../configs/release/typix"
+  }
 }

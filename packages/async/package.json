@@ -28,5 +28,8 @@
   "devDependencies": {
     "@types/lodash": "^4.14",
     "tstt": "^1.0.3"
+  },
+  "release": {
+    "extends": "../../configs/release/typix"
   }
 }
