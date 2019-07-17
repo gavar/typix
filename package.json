@@ -22,7 +22,7 @@
   },
   "scripts": {
     "git:release": "git checkout master && git merge --ff develop && git checkout develop",
-    "lint": "eslint **/*.{js,ts}",
+    "lint": "eslint **/*.{js,ts} --cache",
     "prettier": "prettier **/*.{js,ts,json,yml,md}",
     "semantic-release": "semantic-release --dry-run",
     "sort-package-json:all": "node scripts/sort-package-json-all.js"
