@@ -1,5 +1,11 @@
 module.exports = {
-  rules: {
-    "global-require": "off", // checked by `@typescript-eslint/no-require-imports`
-  },
+  rules: {},
+  overrides: [{
+    files: ["*.js", "*.jsx"],
+    rules: {
+      // allow to import using `require` in js
+      "global-require": "off",
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  }],
 };
