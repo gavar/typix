@@ -27,13 +27,13 @@
   "files": [
     "index.js"
   ],
-  "release": {
-    "extends": "../../configs/release/commitlint"
-  },
   "main": "index.js",
   "scripts": {},
   "dependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0"
+  },
+  "release": {
+    "extends": "../../configs/release/commitlint"
   }
 }

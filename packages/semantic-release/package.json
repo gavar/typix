@@ -26,18 +26,20 @@
   "main": "src/index",
   "types": "src/index",
   "dependencies": {
-    "@typix/async": "1.0.0-beta"
+    "@typix/async": "1.0.0-beta",
+    "slash": "^3.0.0"
   },
   "devDependencies": {
     "@types/cosmiconfig": "^5.0.1",
     "@types/execa": "^0.9.0",
-    "@types/signale": "^1.2.1"
+    "@types/signale": "^1.2.1",
+    "@types/slash": "^2.0.0"
   },
   "peerDependencies": {
-    "cosmiconfig": "^5.0.1",
-    "execa": "^0.9.0",
-    "semantic-release": "^16.0.0-beta",
-    "signale": "^1.2.1"
+    "cosmiconfig": ">=5.0.1",
+    "execa": ">=1.0.0",
+    "semantic-release": ">=16.0.0-beta",
+    "signale": ">=1.2.1"
   },
   "release": {
     "extends": "../../configs/release/semantic-release"
