@@ -24,7 +24,7 @@
   "scripts": {},
   "dependencies": {
     "@typix/util": "1.0.0-dev",
-    "lodash": "^4.17.13"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@types/lodash": "^4.14",
